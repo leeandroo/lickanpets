@@ -1,0 +1,15 @@
+html,
+body,
+header,
+#intro{
+
+	height: 100%;
+}
+#intro{
+
+	background: url(https://muneo.eng.br/wp-content/uploads/2018/10/manutencaoeletrica.jpg)no-repeat center center fixed;
+		-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
