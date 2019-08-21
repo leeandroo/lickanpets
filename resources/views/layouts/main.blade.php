@@ -10,13 +10,15 @@
 	<meta name="apple-mobile-web-app-capable" content="yes"/>
 	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
 
-
-	<link rel="shortcut icon" href="{{asset('img/miniLogo.ico')}}">
+	
     <title>@yield('titulo')</title>
+
+	<link rel="shortcut icon" href="{{asset('img/icono.ico')}}">
 
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
 	<!-- Font Awesome -->
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 	<!-- Bootstrap core CSS -->
 	<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
 	<!-- Material Design Bootstrap -->
@@ -32,9 +34,11 @@
     <link href="{{asset('css/mdb.min.css')}}" rel="stylesheet">
     <link href="{{asset('css/style.css')}}" rel="stylesheet">
     <script src="{{asset('js/all.js')}}"></script>
+	<link href="{{asset('css/addons-pro/stepper.min.css')}}" rel="stylesheet">
 
 
 </head>
+
 <body>
     @include('components.alerts')
 	
@@ -55,9 +59,12 @@
 	<!-- google maps -->
 	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyClfElSCm1oarkG1XhX1Ac8vJ9tIFaYeVs"></script>
 	<!-- google maps -->
-	<script type="text/javascript" src="{{asset('js/scripts.js')}}" ></script>
+	<script type="text/javascript" src="{{asset('js/scripts.js')}}" ></script>	
+	<script type="text/javascript" src="{{asset('js/scriptStepes.js')}}" ></script>
 	<script src="/docs/4.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o" crossorigin="anonymous"></script>
 	<script src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js"></script>
+
+	<script type="text/javascript" src="{{asset('js/addons-pro/stepper.min.js')}}"></script>
 
 </body>
 </html>

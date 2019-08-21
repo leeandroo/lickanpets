@@ -1,0 +1,10 @@
+#centrar{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.mplus{
+	font-family: 'M PLUS Rounded 1c', sans-serif !important;	
+	font-weight: bold;	
+}

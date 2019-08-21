@@ -1,10 +1,48 @@
-$(function () {
-  $('[data-toggle="popover"]').popover()
-  })
+// $(document).ready(function() {
+//     $('[data-toggle="popoverIconos"]').popover({      
+//        html: true,      
+//        content: function() {
+//        return $("#refer").html();
+//      }
+//    });
+//  });  
+  
+  // Botones Info Plan
+  $(document).ready(function() {
+    $( '[data-toggle="popoverIconos"]').popover({content:'',html:true});
+    });
+    
 
-$('.popover-dismiss').popover({
-  trigger: 'focus'
-  })
+  $(document).ready(function() {
+    $('[data-toggle="popoverServiciosBasicos"]').popover({
+      html: true,
+      content: function() {
+        return $('#infoPopServiciosBasicas').html();
+      }
+    });
+  });
+
+  $(document).ready(function() {
+    $('[data-toggle="popoverVacunas"]').popover({
+      html: true,
+      content: function() {
+        return $('#infoPopVacunas').html();
+      }
+    });
+  });
+
+  $(document).ready(function() {
+    $('[data-toggle="popoverEsteticos"]').popover({
+      html: true,      
+      content: function() {
+        return $('#infoPopEstetica').html();
+      }
+    });
+  });
+
+  // Botones Info Plan
+
+
 
 // deslizamiento del raton
 new WOW().init();
@@ -89,4 +127,19 @@ new WOW().init();
       }
     })
   }())
+
+    
+ 
+
+
+
+
+
+
+
+
+
+
+ 
+
 

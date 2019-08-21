@@ -1,7 +1,7 @@
 @extends('layouts.main')
 @section('titulo', 'Iniciar sesión')
 @section('contenido')
-    <div class="view" id="fondo">
+    <div class="view" id="">
         <div class="mask rgba-black-light d-flex justify-content-center align-items-center">
             <div class="container">
                 <div class="row" id="centrar">
@@ -11,11 +11,10 @@
                                 <div class="col-lg-7" id="centrar">
                                     <div class="container-fluid">
                                         <div class="card-body ml-3 mr-0">
-                                            <form class="align-items-center" style="color: #757575;" action="{{ route('login') }}" method="post">
-                                                {!! csrf_field() !!}
+                                            <!--<form class="align-items-center" style="color: #757575;" action="" method="post">-->
                                                 <div class="form-row mb-3 mt-3 text-center">
                                                     <div class="col-lg-12">
-                                                        <h2 class="font-weight-bold black-text"><i class="fas fa-bolt animated tada infinite "></i> BIENVENIDO</h2>	
+                                                        <h2 class="font-weight-bold black-text"><i class="fas fa-paw animated tada infinite "></i> BIENVENIDO</h2>	
                                                         <p class="text-center grey-text my-0" style="font-size: 15px;">
                                                             Ingresa tus credenciales para iniciar sesión.
                                                         </p>
@@ -30,10 +29,13 @@
                                                         <label for="password">Ingresa tu contraseña</label>
                                                         <input name="password" class="form-control validate" type="password">
                                                     </div>
-                                                </div>		
+                                                </div>
                                                 <!-- Sign up button -->
-                                                <div class="md-form my-0 text-center" id="btnLogin">
+                                                {{-- <div class="md-form my-0 text-center" id="btnLogin">
                                                     <button type="submit" class="btn">Iniciar sesión</button>
+                                                </div> --}}
+                                                <div class="md-form my-0 text-center" id="btnRegistrar">
+                                                    <a  class="btn btn-blue-grey" href="{{url('/user-profile')}}">Iniciar Sesión</a>
                                                 </div>
 											</form>
                                         </div>
@@ -44,14 +46,15 @@
                                         <div class="container text-left">
                                             <h3 class="my-4 pb-2">¿NUEVO POR AQUÍ?</h3>
                                             <p  style="font-size: 15px;">
-                                                Registra tu cuenta de usuario, para unirte a nuestra red de clientes, con ello podras: 
+                                                Registra tu cuenta de usuario, para unirte a nuestra familia, con ello podras:
                                             </p>
-                                            <li><i class="fas fa-check white-text"></i> Solicitar los servicios que necesites al momento</li>
-                                            <li><i class="fas fa-check white-text"></i> Controlar cada servicio que te hemos prestado</li>
+                                            <li><i class="fas fa-check white-text"></i> Registrar a tu mascota</li>
+                                            <li><i class="fas fa-check white-text"></i> Contratar un plan de cuidados personalizados</li>
+                                            <li><i class="fas fa-check white-text"></i> Disfrutar de los beneficios de la cobertura de tu plan</li>
                                             <!-- Sign up button -->
                                             <div class="md-form" id="btnRegistrar">
                                                 <a  class="btn" href="{{url('/register')}}">Registrarse</a>
-                                            </div>														
+                                            </div>
                                         </div>
                                     </div>
                                 </div>

@@ -44,17 +44,17 @@ html,
 body,
 header,
 .view {
-  height: 100%;
+  height: 100%;  
 }
 
-@media (max-width: 740px) {
+/* @media (max-width: 740px) {
   html,
   body,
   header,
   .view {
     height: 100vh;
   }
-}
+} */
 
 .top-nav-collapse {
 background-color: rgb(27, 27, 27) !important;
@@ -88,7 +88,7 @@ background: rgb(27, 27, 27) !important;
 }
 
 #footerfondo .footer{
-	background-color: #4472C4!important; 
+	background-color: #4472C4!important;
 }
 
 .form-inline .btn {
@@ -108,11 +108,11 @@ background: rgb(27, 27, 27) !important;
 	background-color: #FF0000;
 	color: white;
 	border-color: #FF0000;
-	width: 120px;	
+	width: 120px;
 	border-radius: 100px;
 }
 
-#popoverInfo{
+.popoverInfo{
 	color: black;
 	border-color: transparent;
 }
@@ -200,14 +200,69 @@ html {
 .sub-title {
 	font-family: 'M PLUS Rounded 1c', sans-serif;
 	font-weight: bold;
-	font-size: 20px;
+	/* font-size: 20px; */
 	color: black;
+}
+
+.sub-title2 {
+	font-family: 'M PLUS Rounded 1c', sans-serif;
+	font-weight: bold;
+	font-size: 19px;
+	color: black;
+}
+
+.sub-title3 {
+	font-family: 'M PLUS Rounded 1c', sans-serif !important;	
+	font-size: 17px;
+
+}
+.mplus{
+	font-family: 'M PLUS Rounded 1c', sans-serif !important;	
+		
+}
+
+.estiloSB{
+	font-family: 'M PLUS Rounded 1c', sans-serif !important;	
+	font-weight: bold;
+	font-size: 17px; 
+	color: #AA3B70 !important;
+}
+.estiloVC{
+	font-family: 'M PLUS Rounded 1c', sans-serif !important;	
+	font-weight: bold;
+	font-size: 17px; 
+	color: #13A08E !important;
+}
+.estiloEX{
+	font-family: 'M PLUS Rounded 1c', sans-serif !important;	
+	font-weight: bold;
+	font-size: 17px; 
+	color: #FB446A !important;
+}
+.estiloSC{
+	font-family: 'M PLUS Rounded 1c', sans-serif !important;	
+	font-weight: bold;
+	font-size: 17px; 
+	color: #8D60F6 !important;
+}
+.estiloES{
+	font-family: 'M PLUS Rounded 1c', sans-serif !important;	
+	font-weight: bold;
+	font-size: 17px; 
+	color: #F88510 !important;
 }
 
 .ra{
 	border-width: 0.30rem;
 	width: 80px;
-	color: #424242;	
+	color: #424242;
+}
+
+.tablaplan{
+
+	padding-top: 0.6rem !important;
+	padding-bottom: 0.6rem  !important;
+
 }
 
 
@@ -225,7 +280,7 @@ li {
 
 .box-label {
 	font-family: "Hind Vadodara";
-	font-size: 16px;	
+	font-size: 16px;
 	color: grey;
 }
 
@@ -267,16 +322,16 @@ background: rgb(27, 27, 27) !important;
 }
 
 #fondo{
-	background-image: url('https://www.radiopax.com/wp-content/uploads/2019/05/electrifica%C3%A7%C3%A3o.jpg'); 
-	background-repeat: no-repeat; 
-	background-size: cover; 
+	background-image: url('https://www.radiopax.com/wp-content/uploads/2019/05/electrifica%C3%A7%C3%A3o.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
 	background-position: center center;
 }
 
 #fondoFormulario{
-	background-image: url('../img/ImgFromulario2.jpg'); 
-	background-repeat: no-repeat; 
-	background-size: cover; 
+	background-image: url('../img/ImgFromulario2.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
 	background-position: center center;
 }
 
@@ -300,9 +355,9 @@ background: rgb(27, 27, 27) !important;
 }
 
 #btnLogin .btn {
-	
-	background-color:#FE4568;		
-	border-radius:30px;	
+
+	background-color:#FE4568;
+	border-radius:30px;
 	color:#ffffff;
 	text-transform: capitalize;
 	padding:10px 31px;
@@ -312,8 +367,8 @@ background: rgb(27, 27, 27) !important;
 
 
 #btnAtras .btn {
-	
-	background-color:transparent;		
+
+	background-color:transparent;
 	border-radius:30px;
 	border: 1.5px solid #000000;
 	color:#000000;
@@ -325,22 +380,22 @@ background: rgb(27, 27, 27) !important;
 
 
 #btnRegistrar .btn {
-	background-color:transparent;		
+	background-color:transparent;
 	border-radius:30px;
 	border: 1.5px solid #ffffff;
 	color:#ffffff;
 	text-transform: capitalize;
 	padding:10px 31px;
-	
+
 	/* text-shadow:0px 1px 0px #2f6627; */
 }
 /* fomulario */
-.panel{ 
-	
-	background: white; 
-	border-radius: 3px; 
+.panel{
+
+	background: white;
+	border-radius: 3px;
 	box-shadow: 0px 25px 42px rgba(0,0,0,0.2);
-	 
+
 }
 /* fomulario */
 
@@ -376,17 +431,17 @@ html {
 
 /*Aqui esta el fonde de la pagina web*/
 #fondo{
-	background-image: url('../img/fondoLickan.png'); 
+	background-image: url('../img/fondoLickan.png');
 	max-width: 100%;
-	background-repeat: no-repeat; 
-	background-size: cover; 
+	background-repeat: no-repeat;
+	background-size: cover;
 	background-position: center center;
 }
 
 #fondoFormulario{
-	background-image: url('../img/ImgFromulario2.jpg'); 
-	background-repeat: no-repeat; 
-	background-size: cover; 
+	background-image: url('../img/ImgFromulario2.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
 	background-position: center center;
 }
 
@@ -410,9 +465,9 @@ html {
 }
 
 #btnLogin .btn {
-	
-	background-color:#FE4568;		
-	border-radius:30px;	
+
+	background-color:#FE4568;
+	border-radius:30px;
 	color:#ffffff;
 	text-transform: capitalize;
 	padding:10px 31px;
@@ -422,8 +477,8 @@ html {
 
 
 #btnAtras .btn {
-	
-	background-color:transparent;		
+
+	background-color:transparent;
 	border-radius:30px;
 	border: 1.5px solid #000000;
 	color:#000000;
@@ -434,22 +489,22 @@ html {
 }
 
 #btnRegistrar .btn {
-	background-color:transparent;		
+	background-color:transparent;
 	border-radius:30px;
 	border: 1.5px solid #ffffff;
 	color:#ffffff;
 	text-transform: capitalize;
 	padding:10px 31px;
-	
+
 	/* text-shadow:0px 1px 0px #2f6627; */
 }
 /* fomulario */
-.panel{ 
-	
-	background: white; 
-	border-radius: 3px; 
+.panel{
+
+	background: white;
+	border-radius: 3px;
 	box-shadow: 0px 25px 42px rgba(0,0,0,0.2);
-	 
+
 }
 
 html {
@@ -463,6 +518,102 @@ html {
 .popover{
     -webkit-box-shadow: 0 5px 10px rgba(0,0,0,.2);
     -moz-box-shadow: 0 5px 10px rgba(0,0,0,.2);
-    box-shadow: 0 5px 10px rgba(0,0,0,.2);
+	box-shadow: 0 5px 10px rgba(0,0,0,.2);
+
     border:transparent !important;
 }
+
+.custom-popover li {
+	border: none!important;
+	text-align: left;
+	padding-bottom: 4px;
+	padding-top: 4px;
+}
+
+
+/* estilos tabla plan */
+.my-custom-scrollbar {
+	position: relative;
+	height: 400px;
+	overflow: auto;
+}
+	.table-wrapper-scroll-y {
+	display: block;
+	}
+
+	.scrollbar {
+	background: #fff;
+	margin-bottom: 25px;
+	}
+	.force-overflow {
+	min-height: 450px;
+	}
+
+	.scrollbar-primary::-webkit-scrollbar {
+	width: 12px;
+	background-color: #F5F5F5; }
+
+	.scrollbar-primary::-webkit-scrollbar-thumb {
+	border-radius: 10px;
+	-webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
+	background-color: rgb(202, 206, 211); }
+
+/* estilos tabla plan */
+
+
+/* The Modal (background) */
+.modal {
+  position: fixed; /* Stay in place */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgba(0, 0, 0, 0.719); /* Black w/ opacity */
+}
+
+/* Modal Content (image) */
+.modal-content {
+
+	width: 50% !important;
+	display: flex!important;
+	justify-content: center!important;
+	align-items: center!important;
+	margin: auto!important;
+}
+
+
+/* Add Animation */
+.modal-content, #caption {  
+  -webkit-animation-name: zoom;
+  -webkit-animation-duration: 0.6s;
+  animation-name: zoom;
+  animation-duration: 0.6s;
+}
+
+
+@keyframes zoom {
+  from {transform:scale(0)} 
+  to {transform:scale(1)}
+}
+
+/* The Close Button */
+.close {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: #ffffff !important;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* 100% Image Width on Smaller Screens */
+@media only screen and (max-width: 700px){
+	.modal-content {
+	  width: 90%!important;
+	}
+  }
