@@ -12,4 +12,9 @@ class interfazController extends Controller
     {
         return view('pages.landing');
     }
+    public function get_user_profile()
+    {
+        $detalle_user = DB::table('detalle_user')->where('detalle_user.iduser', '=', Auth::user()->iduser)->first();
+        return view('pages.profile.user', compact('detalle_user'));
+    }
 }

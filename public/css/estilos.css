@@ -565,11 +565,11 @@ html {
 .modal {
   position: fixed; /* Stay in place */
   overflow: auto; /* Enable scroll if needed */
-  background-color: rgba(0, 0, 0, 0.719); /* Black w/ opacity */
+  background-color: rgba(0, 0, 0, 0.555); /* Black w/ opacity */
 }
 
 /* Modal Content (image) */
-.modal-content {
+.tamañosmodal-content {
 
 	width: 50% !important;
 	display: flex!important;
@@ -578,9 +578,8 @@ html {
 	margin: auto!important;
 }
 
-
 /* Add Animation */
-.modal-content, #caption {  
+.tamañosmodal-content, #caption {  
   -webkit-animation-name: zoom;
   -webkit-animation-duration: 0.6s;
   animation-name: zoom;
@@ -613,7 +612,8 @@ html {
 
 /* 100% Image Width on Smaller Screens */
 @media only screen and (max-width: 700px){
-	.modal-content {
-	  width: 90%!important;
+	.tamañosmodal-content {
+	  width: 93%!important;
+	  background-image: linear-gradient(#e66465, #9198e5);
 	}
   }

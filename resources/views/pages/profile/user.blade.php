@@ -1,7 +1,7 @@
 @extends('layouts.dashboard')
-@section('page-title', 'Mi perfil')
+@section('page-title', 'Perfil de '.Auth::user()->type)
 @section('title', 'Mi perfil')
-{{-- @section('user', 'active-item') --}}
+@section('perfil', 'active-item')
 @section('contenido')
 <div class="col-lg-4 mb-3">
     <div class="card z-depth-0 border rounded">
@@ -11,13 +11,13 @@
             </div>
             <div class="user-profile text-center black-text">
                 <p class="user-name">
-                    Leandro Cisterna <br>
-                    <span class="user-type grey-text">leandrocisterna7@gmail.com</span>
+                    {{ Auth::user()->name.' '.Auth::user()->lastname }} <br>
+                    <span class="user-type grey-text">{{ Auth::user()->email }}</span>
                 </p>
             </div>
             <div class="text-center">
-                <form action="http://sermalett.herokuapp.com/logout" method="post">
-                    <input type="hidden" name="_token" value="Rqd93Px3Pgn6D2EWUhO0UxKeRD0WLvP0FN5P21jN">
+                <form action="{{ route('logout') }}" method="post">
+                    {{ csrf_field() }}
                     <button type="submit" class="btn btn-sm btn-rounded btn-outline-primary waves-effect m-0">Cerrar sesión</button>
                 </form>
             </div>
@@ -33,42 +33,47 @@
                 </div>
             </div>
             <div class="row ml-0 mr-0 mt-4 mb-1">
+
                 <div class="col-6 col-lg-3 text-center mb-3">
                     <div>
                         <i class="fas fa-map-marker-alt fa-3x red-text mb-2"></i>
                     </div>
                     <p class="card-text black-text"> 
                         <b>Dirección </b> <br>
-                        <span class="grey-text">pasaje gaby 4216</span>
+                        <span class="grey-text">{{ $detalle_user->direccion }}</span>
                     </p>
                 </div>
-                <div class="col-6 col-lg-6 text-center mb-3">
+
+                <div class="col-6 col-lg-3 text-center mb-3">
                     <div>
                         <i class="fas fa-phone fa-3x green-text mb-2"></i>
                     </div>
                     <p class="card-text black-text"> 
-                        <b>Telefono</b> <br>
-                        <span class="grey-text">981369057</span>
+                        <b>Telefono 1</b> <br>
+                        <span class="grey-text">{{ $detalle_user->telefono1 }}</span>
                     </p>
                 </div>
-                <!--<div class="col-6 col-lg-3 text-center mb-3">
+
+                <div class="col-6 col-lg-3 text-center mb-3">
                     <div>
-                        <i class="fas fa-user-tag fa-3x green-text mb-2"></i>
+                        <i class="fas fa-phone fa-3x blue-text mb-2"></i>
                     </div>
                     <p class="card-text black-text"> 
-                        <b>Tipo cliente</b> <br>
-                        <span class="grey-text">Persona natural</span>
+                        <b>Telefono 2</b> <br>
+                        <span class="grey-text">{{ $detalle_user->telefono2 }}</span>
                     </p>
-                </div>-->
+                </div>
+
                 <div class="col-6 col-lg-3 text-center mb-3">
                     <div style="color:#F6B800">
-                        <i class="fas fa-id-card fa-3x mb-2" ></i>
+                        <i class="fas fa-id-card fa-3x mb-2"></i>
                     </div>
                     <p class="card-text black-text"> 
                         <b>Rut</b> <br>
-                        <span class="grey-text">192051886</span>
+                        <span class="grey-text">{{ Auth::user()->rut }}</span>
                     </p>
                 </div>
+
             </div>
         </div>
     </div>

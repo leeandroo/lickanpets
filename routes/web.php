@@ -14,10 +14,14 @@
 Route::view('/','pages.landing');
 Route::view('/login','auth.login');
 Route::view('/register','auth.register');
+Route::post('register', 'Auth\RegisterController@register')->name('register');
+Route::post('login', 'Auth\LoginController@login')->name('login');
+Route::post('/logout', 'Auth\LoginController@logout')->name('logout');
 
 // RUTAS PROFILE (Vista de perfil de cliente con vistas a sus mascotas y planes)
 //Route::get('/user-profile','InterfazController@get_user_profile');//compact('detalle_usuario')
-Route::view('/user-profile','pages.profile.user');
+Route::get('/user-profile', 'InterfazController@get_user_profile');
+
 Route::view('/user-profile/mascota','pages.profile.cliente.pet');
 Route::view('/user-profile/planes','pages.profile.cliente.plan');
 Route::view('/user-profile/mascota/create','pages.mascota.create');

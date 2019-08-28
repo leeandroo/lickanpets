@@ -4,16 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+	<meta name="theme-color" content="#000000"/>
+	<meta name="msapplication-navbutton-color" content="#000000"/>
+	<meta name="apple-mobile-web-app-capable" content="yes"/>
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+
     <title>@yield('page-title')</title>
+
+	<link rel="shortcut icon" href="{{asset('img/icono.ico')}}">
+
+
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <!-- Bootstrap core CSS -->
-    <link href="{{asset('dashboard/css/bootstrap.min.css')}}" rel="stylesheet">
+	<!-- Bootstrap core CSS -->
+    <link href="{{asset('css/bootstrap.min.css')}}" rel="stylesheet">
     <!-- Material Design Bootstrap -->
-    <link href="{{asset('dashboard/css/mdb.min.css')}}" rel="stylesheet">
-    <link href="{{asset('dashboard/css/style.css')}}" rel="stylesheet">
-    <script src="{{asset('dashboard/js/all.js')}}"></script>
+    <link href="{{asset('css/mdb.min.css')}}" rel="stylesheet">
+    <link href="{{asset('css/estilosDash.css')}}" rel="stylesheet">
+    <script src="{{asset('js/all.js')}}"></script>
+
 	<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.css">
+
+
+
+
+
 </head>
 <body class="fixed-sn white-skin grey lighten-4">
     @include('components.alerts')
@@ -23,33 +39,64 @@
 		<!-- Sidebar navigation -->
 			<div id="slide-out" class="side-nav fixed z-depth-0 border border-1 overflow">
 				<div class="side-header mt-4">
-					<div class="avatar mx-auto white">
-						<img src="/img/juntos.png" alt="avatar mx-auto white">
+					<div id="centrar">
+						<img src="/img/juntos.png" width="135" height="90">
 					</div>
+
 					<div class="user-profile text-center black-text">
 						<p class="user-name">
 							Cuidados Pets Flexible <br>
-							<span class="user-type grey-text">Cliente</span>
+							<span class="user-type grey-text">{{ Auth::user()->type }}</span>
 						</p>
 					</div>
 				</div>
+				
 				<div class="list-group " id="lista">
-					<a href="{{ url('/user-profile') }}" class="list-item mt-1 @yield('user')">
+					<a href="{{ url('/user-profile') }}" class="list-item mt-1 @yield('perfil')">
 						<i class="far fa-user ml-2 mr-4 fa-fw icono"></i>Mi perfil
 						<div class="list-mark"></div>
 					</a>
-						<a href="{{ url('/user-profile/mascota') }}" class="list-item mt-1"  @yield('mascota')>
-							<i class="fas fa-paw ml-2 mr-4 fa-fw icono"></i>Mis mascotas
+
+
+					@if(Auth::user()->type == 'Cliente')
+						<a href="{{ url('/user-profile/mascota') }}" class="list-item mt-1 @yield('mascotas')">
+							<i class="far fa-calendar-alt ml-2 mr-4 fa-fw icono"></i>Mis mascotas
 							<div class="list-mark"></div>
 						</a>
-						<a href="{{url('/user-profile/planes')}}" class="list-item mt-1" @yield('plan')>
+						<a href="{{ url('/user-profile/mis-planes') }}" class="list-item mt-1 @yield('planes')">
 							<i class="far fa-file-alt ml-2 mr-4 fa-fw icono"></i>Mis planes 
 							<div class="list-mark"></div>
+						</a> 
+					@elseif(Auth::user()->type == 'Admin')
+						<!-- <a href="{{ url('/admin-profile/insumo') }}" class="list-item mt-1 @yield('bodega')">
+							<i class="fas fa-dolly ml-2 mr-4 fa-fw icono"></i>Opcion 1
+							<div class="list-mark"></div>
 						</a>
+						<a href="{{ url('/user-profile/control-citas') }}" class="list-item mt-1 @yield('citas')">
+							<i class="far fa-calendar-alt ml-2 mr-4 fa-fw icono"></i>Opcion 2
+							<div class="list-mark"></div>
+						</a>
+						<a href="#" class="list-item mt-1 @yield('orden')">
+							<i class="fas fa-tasks ml-2 mr-4 fa-fw icono"></i>Opcion 3
+							<div class="list-mark"></div> 
+						</a>-->
+					@elseif(Auth::user()->type == 'Trabajador')
+						<!-- <a href="{{ url('/user-profile/tareas') }}" class="list-item mt-1 @yield('tareas')">
+							<i class="fas fa-tasks ml-2 mr-4 fa-fw icono"></i>Tareas asignadas
+							<div class="list-mark"></div>
+						</a> -->
+					@endif
+
+
+					<a href="#" class="list-item mt-1 @yield('datos')">
+						<i class="fas fa-edit ml-2 mr-4 fa-fw icono"></i>Actualizar datos
+						<div class="list-mark"></div>
+					</a>
 				</div>
 					<div class="sidenav-bg mask-strong"></div>
 			</div>
 		<!--/. Sidebar navigation -->
+		
       	<!-- Navbar -->
       	<nav class="navbar fixed-top navbar-toggleable-md navbar-expand-lg scrolling-navbar double-nav grey lighten-4 z-depth-0">
 			<!-- SideNav slide-out button -->
@@ -59,9 +106,10 @@
 			<!--/. SideNav slide-out button-->
 
 			<!-- Breadcrumb-->
-			<div class="breadcrumb-dn">
-                <!--<img src="img/logo 1.PNG" style="width: 190px" height="50px">-->
-				<!--<p>Lickan<span class="cyan-text">Pets</span></p>-->
+			<div class="fondo pl-5">
+				<div id="centrar">
+					<img src="/img/logo 1.PNG" width="170" height="35">
+				</div>            
 			</div>
 			<!--/. Breadcrumb-->
 
@@ -70,7 +118,7 @@
 				<li class="nav-item dropdown">
 					<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
 					aria-haspopup="true" aria-expanded="false">
-					Hola, Leandro
+					Hola, {{Auth::user()->name}}
 					</a>
 					<div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
 						<a class="dropdown-item grey-text" href="#">
@@ -105,15 +153,18 @@
 		</div>
     </div>
     <!--/. Content -->
-    <script type="text/javascript" src="{{asset('dashboard/js/jquery-3.3.1.min.js')}}"></script>
+
+    <script type="text/javascript" src="{{asset('js/jquery-3.3.1.min.js')}}"></script>
 	<script src="http://code.jquery.com/ui/1.10.1/jquery-ui.js"></script>
     <!-- Bootstrap tooltips -->
-    <script type="text/javascript" src="{{asset('dashboard/js/popper.min.js')}}"></script>
+    <script type="text/javascript" src="{{asset('js/popper.min.js')}}"></script>
     <!-- Bootstrap core JavaScript -->
-    <script type="text/javascript" src="{{asset('dashboard/js/bootstrap.min.js')}}"></script>
+    <script type="text/javascript" src="{{asset('js/bootstrap.min.js')}}"></script>
     <!-- MDB core JavaScript -->
-    <script type="text/javascript" src="{{asset('dashboard/js/mdb.js')}}"></script>
-    <script type="text/javascript" src="{{asset('dashboard/js/main.js')}}"></script>
+    <script type="text/javascript" src="{{asset('js/mdb.js')}}"></script>
+    <script type="text/javascript" src="{{asset('js/main.js')}}"></script>
+
+
     <script>
       // SideNav Initialization
       $(".button-collapse").sideNav();
