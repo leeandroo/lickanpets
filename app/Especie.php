@@ -26,5 +26,10 @@ class Especie extends Model
     {
         return $this->hasMany(EspecieVariante::class);
     }
+
+    public function mascota()
+    {
+        return $this->hasMany(Mascota::class);
+    }
     
 }

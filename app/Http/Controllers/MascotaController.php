@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Mascota;
 use App\Especie;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Input;
 
 use Auth;
 
@@ -14,7 +15,7 @@ class MascotaController extends Controller
 {
 
     public function listEspecies(){   
-        $especies = Especie::all() ;        
+        $especies = Especie::all() ;                
         return view('pages.mascota.create', ['especies' => $especies]);
     }
 
@@ -54,12 +55,11 @@ class MascotaController extends Controller
         } catch (\Exception $e) {
             return redirect()->back()->withErrors('No se pudo insertar la mascota');
         }
-        return redirect('/user-profile/mascota/create')->with('message', array('title' => '¡Genial!', 'body'=>'Tu mascotas a sido agregada con exito')); 
+        return redirect('/user-profile/mascota')->with('message', array('title' => '¡Genial!', 'body'=>'Tu mascotas a sido agregada con exito')); 
     }
 
     public function index()
     {
-        
         $mascotas = Mascota::all() ; 
         return view('pages.mascota.index', compact('mascotas'));
     }

@@ -21,6 +21,11 @@ class Variante extends Model
 
     
     // Relationships
+    public function especie()
+    {
+        return $this->belongsToMany(Especie::class, 'especie_variante', 'variante_id', 'especie_id');
+    }
+
     public function servicio()
     {
         return $this->belongsTo(Servicio::class);
