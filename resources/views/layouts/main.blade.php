@@ -46,6 +46,10 @@
 	
     @yield('contenido')
 	
+	
+
+	<script type="text/javascript" src="{{asset('js/scripts.js')}}" ></script>	
+	
     <!-- JQuery -->
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
 	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
@@ -63,6 +67,7 @@
 	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyClfElSCm1oarkG1XhX1Ac8vJ9tIFaYeVs"></script>
 	<!-- google maps -->
 	<script type="text/javascript" src="{{asset('js/scripts.js')}}" ></script>	
+	
 	<script type="text/javascript" src="{{asset('js/scriptStepes.js')}}" ></script>
 	<script src="/docs/4.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o" crossorigin="anonymous"></script>
 	<script src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js"></script>

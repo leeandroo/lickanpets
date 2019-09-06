@@ -7,7 +7,7 @@
     <div class="card z-depth-0 border rounded">
         <div class="card-body">
             <div class="avatar mx-auto white mb-3 mt-3">
-                <img src="http://grantce.net/images/avatar.png" alt="avatar mx-auto white" class="rounded-circle img-fluid z-depth-2">
+                <img src="/img/user.png" alt="avatar mx-auto white" class="rounded-circle img-fluid z-depth-2">
             </div>
             <div class="user-profile text-center black-text">
                 <p class="user-name">
@@ -50,7 +50,7 @@
                     </div>
                     <p class="card-text black-text"> 
                         <b>Telefono 1</b> <br>
-                        <span class="grey-text">{{ $detalle_user->telefono1 }}</span>
+                        <span class="grey-text">{{ $detalle_user->telefono_1 }}</span>
                     </p>
                 </div>
 
@@ -60,7 +60,7 @@
                     </div>
                     <p class="card-text black-text"> 
                         <b>Telefono 2</b> <br>
-                        <span class="grey-text">{{ $detalle_user->telefono2 }}</span>
+                        <span class="grey-text">{{ $detalle_user->telefono_2 }}</span>
                     </p>
                 </div>
 

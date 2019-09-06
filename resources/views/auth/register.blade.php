@@ -27,14 +27,17 @@
                                                 <input name="tipo_usuario" class="form-control " type="hidden" value="Cliente">
                                             </div>
                                             <div class="form-row">
+                                                    <!-- input nombre -->
                                                 <div class="col-lg-6 col-md-6 col-6 my-2">
                                                     <!-- <label for="nombre" class="mt-1 box-label">Nombre</label> -->
                                                     <input name="nombre" class="form-control " type="text" placeholder="Nombre" value="{{ old('nombre') }}">
                                                 </div>
+                                                    <!-- input apellido -->
                                                 <div class="col-lg-6 col-md-6 col-6 my-2">
                                                     <!-- <label for="apellido" class="mt-1 box-label">Apellido</label> -->
                                                     <input name="apellido" class="form-control " type="text" placeholder="Apellido" value="{{ old('apellido') }}">
-                                                </div>                                                
+                                                </div>      
+                                                    <!-- input movil 1 -->
                                                 <div class="col-lg-6 col-md-6 col-12 my-2">
                                                     <!-- <label for="telefono" class="mt-1 box-label">Celular 1</label> -->
                                                     <div class="input-group mb-2 mr-sm-2">
@@ -44,6 +47,7 @@
                                                         <input name="telefono1" type="text" class="form-control py-0" placeholder="Movil 1" maxlength="8" value="{{ old('telefono1') }}">
                                                     </div>                                                                                                                        
                                                 </div>
+                                                    <!-- input movil 2 -->
                                                 <div class="col-lg-6 col-md-6 col-12 my-2">
                                                     <!-- <label for="telefono" class="mt-1 box-label">Celular 2</label> -->
                                                     <div class="input-group mb-2 mr-sm-2">
@@ -53,6 +57,7 @@
                                                         <input name="telefono2" type="text" class="form-control py-0" placeholder="Movil 2" maxlength="8" value="{{ old('telefono2') }}">
                                                     </div>                                                                                                                        
                                                 </div>
+                                                    <!-- input rut -->
                                                 <div class="col-lg-6 col-md-6 col-12 my-2" >
                                                     <!-- <label for="rut" class="mt-1 box-label">RUT</label> -->
                                                     <div class="row">
@@ -70,20 +75,20 @@
                                                     </div>
                                                     
                                                 </div>
+                                                    <!-- input Dirección-->
                                                 <div class="col-lg-6 col-md-6 col-12 my-2">
-                                                    <!-- <label for="direccion" class="mt-1 box-label">Dirección</label> -->
+                                                        <!-- <label for="direccion" class="mt-1 box-label">Dirección</label> -->
                                                     <input name="direccion" class="form-control " type="text" placeholder="Dirección" value="{{ old('direccion') }}">
                                                 </div>
-                                                <!-- <div>                                                
-                                                    <div class="form-check px-1" >
-                                                        <input class="form-check-input" type="checkbox" id="inlineFormCheckMD" name="whatssapp" value="{{ old('whatssapp') }}">
-                                                        <label class="form-check-label" for="inlineFormCheckMD">
-                                                        <p style="font-size: 13px;">¿Quieres que te hablemos por WhatsApp?</p>
-                                                        </label>
-                                                    </div>
-                                                </div> -->
-                                                
-                                                                                                            
+
+                                                    <!-- <div>                                                
+                                                        <div class="form-check px-1" >
+                                                            <input class="form-check-input" type="checkbox" id="inlineFormCheckMD" name="whatssapp" value="{{ old('whatssapp') }}">
+                                                            <label class="form-check-label" for="inlineFormCheckMD">
+                                                            <p style="font-size: 13px;">¿Quieres que te hablemos por WhatsApp?</p>
+                                                            </label>
+                                                        </div>
+                                                    </div> -->                                                                                                                                                        
                                             </div>
                                         </div>
                                         <div class="form-group ml-2 mr-2">

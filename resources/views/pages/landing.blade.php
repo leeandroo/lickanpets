@@ -491,5 +491,4 @@
   
   </footer>
 
-
 @endsection 

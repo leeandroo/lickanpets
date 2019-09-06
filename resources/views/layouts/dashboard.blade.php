@@ -106,11 +106,11 @@
 			<!--/. SideNav slide-out button-->
 
 			<!-- Breadcrumb-->
-			<div class="fondo pl-5">
+			<!-- <div class="fondo pl-5">
 				<div id="centrar">
 					<img src="/img/logo 1.PNG" width="170" height="35">
 				</div>            
-			</div>
+			</div> -->
 			<!--/. Breadcrumb-->
 
 			<!-- Dropdown button -->
@@ -167,31 +167,29 @@
 
     <script>
       // SideNav Initialization
-      $(".button-collapse").sideNav();
+      $(".button-collapse").sideNav();	  
     </script>
     <script>
-      $('#message').modal('show')
-      $.datepicker.regional['es'] = {
-        closeText: 'Cerrar',
-        prevText: '< Ant',
-        nextText: 'Sig >',
-        currentText: 'Hoy',
-        monthNames: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'],
-        monthNamesShort: ['Ene','Feb','Mar','Abr', 'May','Jun','Jul','Ago','Sep', 'Oct','Nov','Dic'],
-        dayNames: ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado'],
-        dayNamesShort: ['Dom','Lun','Mar','Mié','Juv','Vie','Sáb'],
-        dayNamesMin: ['Do','Lu','Ma','Mi','Ju','Vi','Sá'],
-        weekHeader: 'Sm',
-        dateFormat: 'dd/mm/yy',
-        firstDay: 1,
-        isRTL: false,
-        showMonthAfterYear: false,
-        yearSuffix: ''
-      };
-      $.datepicker.setDefaults($.datepicker.regional['es']);
-      $(function() {
-        $("#datepicker").datepicker({ minDate: 0 });
-      });
+	  	$('#message').modal('show')
+	  
+      	$("#datepicker").datepicker({
+			changeyear: true,
+			closeText: 'Cerrar',
+			prevText: '< Ant',
+			nextText: 'Sig >',
+			currentText: 'Hoy',
+			monthNames: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'],
+			monthNamesShort: ['Ene','Feb','Mar','Abr', 'May','Jun','Jul','Ago','Sep', 'Oct','Nov','Dic'],
+			dayNames: ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado'],
+			dayNamesShort: ['Dom','Lun','Mar','Mié','Juv','Vie','Sáb'],
+			dayNamesMin: ['Do','Lu','Ma','Mi','Ju','Vi','Sá'],
+			weekHeader: 'Sm',
+			dateFormat: 'dd/mm/yy',
+			firstDay: 1,
+				maxDate: 0
+		});
+
+		
 
       $('.timepicker').timepicker({
         timeFormat: 'h:mm p',
@@ -200,6 +198,7 @@
         dropdown: true,
         scrollbar: true
       });
+
     </script>
 </body>
 </html>

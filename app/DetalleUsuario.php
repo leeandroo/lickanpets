@@ -7,13 +7,13 @@ use Illuminate\Database\Eloquent\Model;
 class DetalleUsuario extends Model
 {
     protected $table = "detalle_user";
-    protected $primaryKey = "iduserdetalle";
+
     public $timestamps = false;
 
     protected $fillable =[
-        'iduser',
-        'telefono1',
-        'telefono2',
+        'user_id',
+        'telefono_1',
+        'telefono_2',
         'direccion', 
 
     ];

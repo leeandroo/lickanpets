@@ -48,10 +48,10 @@ class RegisterController extends Controller
             $conttel2 = request()->get('telefono2'),
             $telefono2 = "569".$conttel1,
 
-            'iduser' => $user->iduser,
+            'user_id' => $user->id,
             'direccion' => request()->get('direccion'),
-            'telefono1' => $telefono1,
-            'telefono2' => $telefono2
+            'telefono_1' => $telefono1,
+            'telefono_2' => $telefono2
         ]);
 
         if(request()->get('tipo_usuario') == 'Cliente')

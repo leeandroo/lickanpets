@@ -25,7 +25,7 @@
                                             <div class="form-row mt-3 mb-4">
                                                 <div class="col-lg-12" >
                                                     <label for="email">Ingresa tu correo</label>
-                                                    <input name="email" class="form-control validate" type="email">
+                                                    <input name="email" class="form-control validate" type="email" value="{{ old('email') }}">
                                                 </div>
                                                 <div class="col-lg-12 mt-2" >
                                                     <label for="password">Ingresa tu contraseña</label>
