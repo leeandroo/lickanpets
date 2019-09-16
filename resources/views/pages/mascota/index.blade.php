@@ -1,7 +1,7 @@
 @extends('layouts.dashboard')
 @section('page-title', 'Mis Mascotas')
 @section('title', 'Mis Mascotas')
-@section('mascota', 'active-item')
+@section('mascotas', 'active-item')
 @section('boton-agregar')
 <a class="btn btn-success btn-sm btn-rounded m-0 float-right" href="{{ url('/mascota/create') }}">
     <i class="fas fa-plus"></i> Nueva mascota
@@ -18,43 +18,83 @@
                         @foreach($mascotas as $mascota)
                             <div class="card my-4">
                                 <div class="card-body p-0">
-                                    <div class="row ml-0 mr-0 mt-4 mb-1">
-                                        <div class="col-6 col-lg-3 text-center mb-3">
+                                    <div class="row ml-0 mr-0 my-2">
+                                        
+                                        <div class="col-12 col-lg-4 col-md-12 text-center my-2">
+                                            <div class="view overlay rounded z-depth-2 mb-lg-0">
+                                                <img class="img-fluid" src="{{asset('/fotos/mascotas/'.$mascota->foto)}}" alt="{{ $mascota->foto }}" alt="Responsive image">                                                                            
+                                                <a>
+                                                <div class="mask rgba-white-slight"></div>
+                                                </a>
+                                            </div>
+                                        </div>  
+
+                                        <div class="col-12 col-lg-4 col-md-6 pl-0" id="centrar">
                                             <div>
-                                            
-                                                <i class="fas fa-paw fa-2x yellow-text mb-2"></i>
+                                                <h3 class="font-weight-bold mb-3 my-2"><strong>{{ $mascota->nombre }}</strong></h3>
+                                                <p class="my-2">
+                                                    @foreach ($especies as $especie) 
+                                
+                                                        @if ( $especie->id == $mascota->especie_id )                                                       
+                                                            <a><strong>Especie: </strong></a> {{ $especie->nombre }}                                  
+                                                        @endif  
+                                                        
+                                                    @endforeach                                        
+                                                </p>
+                                                <p class="my-2">
+                                                    @foreach ($razas as $raza) 
+                                
+                                                        @if ( $raza->id == $mascota->raza_id )     
+                                                            <a><strong>Raza: </strong></a> {{ $raza->nombre }}                                                                                                                                                       
+                                                        @endif  
+                                                        
+                                                    @endforeach                                     
+                                                </p>
+                                                <p class="my-2">
+
+                                                    @if ( $mascota->chip == '' )                                                         
+                                                        <a><strong>N° Chip:</strong></a> No posee chip                                                                                                                                                      
+                                                    @else
+                                                        <a><strong>N° Chip:</strong></a> {{ $mascota->chip }}  
+                                                    @endif                                                                                             
+                                                </p> 
+                                                <p class="my-2">
+
+                                                    @if ( $mascota->estado_plan == '1' )                                                         
+                                                        <a><strong>Plan:</strong></a> No posee Plan                                                                                                                                                      
+                                                    @else
+                                                        <a><strong>Plan:</strong></a> Adquirido 
+                                                    @endif                                                                                             
+                                                </p> 
                                             </div>
-                                            <p class="card-text black-text"> 
-                                                <b>nombre </b> <br>
-                                                <span class="grey-text">{{ $mascota->nombre }}</span>
-                                            </p>
                                         </div>
-                                        <div class="col-6 col-lg-3 text-center mb-3">
+
+                                        <div class="col-12 col-lg-4 col-md-6 pl-0" id="centrar">                                            
+                                            @if ( $mascota->estado_plan == '1' ) 
+                                                    
                                             <div>
-                                                <i class="fas fa-paw fa-2x blue-text mb-2"></i>                                            
-                                            </div>
-                                            <p class="card-text black-text"> 
-                                                <b>Especie</b> <br>
-                                                <span class="grey-text">{{ $mascota->especie_id }}</span>
-                                            </p>
-                                        </div>
-                                        <div class="col-6 col-lg-3 text-center mb-3">
-                                            <div>                                            
-                                                <i class="fas fa-paw fa-2x green-text mb-2"></i>
-                                            </div>
-                                            <p class="card-text black-text"> 
-                                                <b>chip</b> <br>
-                                                <span class="grey-text">{{ $mascota->chip }}</span>
-                                            </p>
-                                        </div>
-                                        <div class="col-6 col-lg-3 text-center mb-3">
-                                            <div>                                        
-                                                <i class="fas fa-paw fa-2x red-text mb-2"></i>
-                                            </div>
-                                            <p class="card-text black-text"> 
-                                                <b>foto</b> <br>
-                                                <span class="grey-text">{{ $mascota->foto }}</span>
-                                            </p>
+                                                <div class="col-12 col-lg-12 col-md-12" id="centrar">
+                                                <a class="btn purple btn-sm  btn-rounded " href="{{url('plan', ['especie' => $mascota->especie_id, 'mascota' => $mascota->id, 'user' => Auth::user()->id ])}}">                                                                                                                                                                                                                                                                     
+                                                        <i class="fas fa-plus"></i> Agregar Plan
+                                                    </a>
+                                                </div>
+                                                <div class="col-12 col-lg-12 col-md-12" id="centrar">
+                                                    <a class="btn btn-info btn-sm  btn-rounded " href="#">
+                                                        <i class="fas fa-edit"></i> Editar Información 
+                                                    </a>
+                                                </div>
+                                            </div>     
+
+                                            @else
+                                            <div>                                                
+                                                <div class="col-12 col-lg-12 col-md-12" id="centrar">
+                                                    <a class="btn btn-info btn-sm btn-rounded " href="#">
+                                                        <i class="fas fa-edit"></i> Editar Información 
+                                                    </a>
+                                                </div>
+                                            </div>  
+                                            @endif     
+
                                         </div>
                                     </div>
                                 </div>

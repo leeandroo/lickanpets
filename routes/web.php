@@ -15,6 +15,7 @@ Route::get('/', 'InterfazController@get_landing_page'); // redireccionar a la pa
 Route::get('/login', 'InterfazController@get_login_page'); // redireccionar a la pagina de inicio de sesion
 Route::get('/register', 'InterfazController@get_register_page'); // redireccionar a la pagina de registro
 Route::get('/user-profile', 'InterfazController@get_user_profile'); // redirecciona al dashboard con la informacion del perfil
+Route::get('/plan/{especie}/{mascota}/{user}','InterfazController@get_plan_user');//redirecciona a la vista del plan editable con dos atributos el ID tanto de la mascota como del usuario 
 //RUTAS AUTH (Autentificación)
 Route::post('register', 'Auth\RegisterController@register')->name('register');
 Route::post('login', 'Auth\LoginController@login')->name('login');
@@ -22,8 +23,9 @@ Route::post('/logout', 'Auth\LoginController@logout')->name('logout');
 //RUTAS Mascota
 Route::get('/user-profile/mascota', 'MascotaController@index'); // redirecciona al controlador de mascota para obtener informacion y depues ir a la vista de las mascotas
 Route::post('registerPet', 'MascotaController@agregarMascota')->name('registerPet');//redireccinoa al controlador para la insersion 
-Route::get('/mascota/create','MascotaController@listEspecies');
-
+Route::get('/mascota/create','MascotaController@listEspecies');//redirecciona al controlador para este ebtner las especies y luego redireccionar a la vista de ingreso de mascota
+//redirecciona al controlador de la mascota para obtener las razas    
+Route::Get('razas/{id}', 'MascotaController@getRazas');
 
 // RUTAS PROFILE (Vista de perfil de cliente con vistas a sus mascotas y planes)
 //Route::get('/user-profile','InterfazController@get_user_profile');//compact('detalle_usuario')

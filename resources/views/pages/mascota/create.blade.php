@@ -13,8 +13,9 @@
                         {!! csrf_field() !!}                    
                         <div class="form-group pb-3">
                             <div class="form-row">
-                                <!-- input nombre -->
+                                <!-- input nombre -->                                
                                 <input name="usuario" class="form-control" type="hidden" value="{{ Auth::user()->id }}">
+                                <input name="estado" class="form-control" type="hidden" value="1">
 
                                 <div class="col-lg-6 col-md-6 col-12 my-2 ">
                                     <!-- <label for="nombre" class="mt-1 box-label">Nombre</label> -->
@@ -23,25 +24,23 @@
                                     <!-- input apellido -->
                                 <div class="col-lg-6 col-md-6 col-12 my-2">
                                     <!-- <label for="apellido" class="mt-1 box-label">Apellido</label> -->
-                                    <input name="chip" class="form-control " type="text" placeholder="N° chip" maxlength="15" value="{{ old('chip') }}" oninput="this.value = this.value.replace(/[^0-9.]/g, ''); this.value = this.value.replace(/(\.*)\./g, '$1');">
+                                    <input name="chip" class="form-control " type="number" placeholder="N° chip" maxlength="15" value="{{ old('chip') }}" oninput="this.value = this.value.replace(/[^0-9.]/g, ''); this.value = this.value.replace(/(\.*)\./g, '$1');">
                                     <!-- <input type="text" oninput="this.value = this.value.replace(/[^0-9.]/g, ''); this.value = this.value.replace(/(\..*)\./g, '$1');" > -->
                                 </div>      
                                     <!-- input movil 1 -->
                                 <div class="col-lg-6 col-md-6 col-12 my-2">
                                     <!-- <label for="telefono" class="mt-1 box-label">Celular 1</label> -->
-                                    <select class="browser-default custom-select" name="especie" required>
-                                        @foreach ($especies as $especie) 
-                                            <option value="{{ $especie->id }}">{{ $especie->nombre }}</option>                        
-                                        @endforeach
+                                    <select class="browser-default custom-select" name="especie" id="especies" required>
+                                        <option disabled selected>Selecciona una especie</option>
+                                        <option value="1" >Perro</option>
+                                        <option value="2" >Gato</option>
                                     </select>                                                                                                                   
                                 </div>
                                     <!-- input movil 2 -->
                                 <div class="col-lg-6 col-md-6 col-12 my-2">
                                     <!-- <label for="telefono" class="mt-1 box-label">Celular 2</label> -->
-                                    <select class="browser-default custom-select" name="raza" required>
-                                            <option value="" disabled selected>¿Qué Raza es?</option>
-                                            <option value="27">Yorkshire</option>
-                                            <option value="32">Persa</option>
+                                    <select class="browser-default custom-select" name="raza" id="razas" required>
+                                        <option disabled selected>Selecciona una raza</option>
                                     </select>                                                                                                                        
                                 </div>
                                     <!-- input rut -->

@@ -164,6 +164,9 @@
     <script type="text/javascript" src="{{asset('js/mdb.js')}}"></script>
     <script type="text/javascript" src="{{asset('js/main.js')}}"></script>
 
+	
+	<script language="javascript"  type="text/javascript" src="{{asset('js/dropdown.js')}}" ></script>
+	
 
     <script>
       // SideNav Initialization
@@ -189,15 +192,7 @@
 				maxDate: 0
 		});
 
-		
-
-      $('.timepicker').timepicker({
-        timeFormat: 'h:mm p',
-        defaultTime: 'now +30',
-        dynamic: true,
-        dropdown: true,
-        scrollbar: true
-      });
+	
 
     </script>
 </body>

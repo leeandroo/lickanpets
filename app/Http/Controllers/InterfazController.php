@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Variante;
+use App\Mascota;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Auth;
@@ -22,13 +23,25 @@ class interfazController extends Controller
 
     public function get_register_page()
     {
-        return view('pages.register');
+        return view('auth.register');
     }
 
     public function get_user_profile()
     {
         $detalle_user = DB::table('detalle_user')->where('detalle_user.user_id', '=', Auth::user()->id)->first();
         return view('pages.profile.user', compact('detalle_user'));
+    }
+
+    public function get_plan_user($especie, Mascota $mascota, $user){
+        
+        if($especie == "1"){
+            $variantes = DB::table('variante_perro')->get();
+            return view('pages.mascota.plan', compact('variantes', 'mascota', 'user'));            
+        }elseif($especie == "2"){
+            $variantes = DB::table('variante_gato')->get();
+            return view('pages.mascota.plan', compact('variantes', 'mascota', 'user'));   
+            
+        }
     }
 
     public function agregarVariante(Request $request)

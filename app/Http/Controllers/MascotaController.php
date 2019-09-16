@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Mascota;
 use App\Especie;
+use App\Raza;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Input;
 
@@ -23,15 +24,16 @@ class MascotaController extends Controller
 
         $this->validate(request(), [
                         
-            'chip' => 'required|min:15',
+            'chip' => 'nullable|min:15',
             'nombre' => 'required|max:10|string',
             'sexo'=> 'required',
             'fecha' => 'required|date_format:d/m/Y|min:10|max:10',                                 
             'especie' => 'required',
             'raza' => 'required',
-            'foto' => 'mimes:jpeg,jpg,png,bmp',   
+            'foto' => 'mimes:jpeg, jpg, png, bmp',   
             'usuario' => 'required'
         ]);  
+
         
         $mascota = new Mascota();
         $mascota->nombre = request()->get('nombre');
@@ -41,13 +43,14 @@ class MascotaController extends Controller
         $mascota->especie_id = request()->get('especie');        
         $mascota->raza_id = request()->get('raza');
         $mascota->user_id = request()->get('usuario');
+        $mascota->estado_plan = request()->get('estado');
 
         if(Input::hasFile('foto')){
             $foto=Input::file('foto');
             $foto->move(public_path().'/fotos/mascotas/',$foto->getClientOriginalName());
             $mascota->foto=$foto->getClientOriginalName();            
         }else{
-            $mascota->foto = '/fotos/mascotas/null';
+            $mascota->foto = 'Sin Foto.png';
         }
 
         try {
@@ -55,13 +58,21 @@ class MascotaController extends Controller
         } catch (\Exception $e) {
             return redirect()->back()->withErrors('No se pudo insertar la mascota');
         }
+    
         return redirect('/user-profile/mascota')->with('message', array('title' => '¡Genial!', 'body'=>'Tu mascotas a sido agregada con exito')); 
     }
 
-    public function index()
-    {
+    public function index(){
         $mascotas = Mascota::all() ; 
-        return view('pages.mascota.index', compact('mascotas'));
+
+        $especies = Especie::all() ;
+        $razas = Raza::all() ;  
+
+        return view('pages.mascota.index', compact('mascotas', 'especies', 'razas'));
+    }
+
+    public function getRazas($id){
+        return Raza::where('especie_id','=',$id)->get();
     }
 
 
