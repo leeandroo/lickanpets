@@ -33,15 +33,42 @@ class interfazController extends Controller
     }
 
     public function get_plan_user($especie, Mascota $mascota, $user){
+
+        $estado = "contratar";
         
         if($especie == "1"){
             $variantes = DB::table('variante_perro')->get();
-            return view('pages.mascota.plan', compact('variantes', 'mascota', 'user'));            
+            return view('pages.mascota.plan', compact('variantes', 'mascota', 'estado'));            
         }elseif($especie == "2"){
             $variantes = DB::table('variante_gato')->get();
-            return view('pages.mascota.plan', compact('variantes', 'mascota', 'user'));   
+            return view('pages.mascota.plan2', compact('variantes', 'mascota', 'estado'));   
             
         }
+    }
+
+    public function get_planCotizar(){
+        
+        return view('pages.step');
+    }
+    public function planCotizar(){
+
+        $especie = request()->get('radioEspecies');
+        $nombre = request()->get('nombre');
+        $estado = "cotizar";
+
+
+        if($especie == 1){
+            $variantes = DB::table('variante_perro')->get();
+            return view('pages.mascota.plan', compact('variantes', 'nombre', 'estado'));  
+
+        }elseif($especie == 2){
+
+            $variantes = DB::table('variante_gato')->get();
+            return view('pages.mascota.plan2', compact('variantes', 'nombre', 'estado'));   
+            
+        }
+
+        echo ($especie." - ".$nombre." - ".$estado);             
     }
 
     public function agregarVariante(Request $request)

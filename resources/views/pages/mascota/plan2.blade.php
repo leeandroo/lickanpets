@@ -1,4 +1,4 @@
-@extends('layouts.main')
+@extends('layouts.main2')
 @section('titulo', 'Edita tu plan')
 @section('contenido')
 
@@ -6,12 +6,12 @@
 		<div class="container" style="padding-top: 10px; padding-bottom: 10px;">
 
 				<!-- Section heading -->
-				<h2 class="h1 font-weight-bold text-center my-2 mplus">Crea el Plan para         
+				<h2 class="h1 font-weight-bold text-center my-2 mplus">Crea el Plan para 
                     @if ( $estado == 'contratar' ) 
                         {{ $mascota->nombre }}
                     @else
                         {{ $nombre }}
-                    @endif         
+                    @endif 
                 </h2>
 				<!-- Section description -->
 				<p class="text-center w-responsive mx-auto mb-3">Te invitamos a crear un plan salud preventivo para 
@@ -19,7 +19,7 @@
                         {{ $mascota->nombre }},
                     @else
                         {{ $nombre }},
-                    @endif  
+                    @endif
                 
                 uniendo  veterinaria, peluquería y alimentación para facilitar el cuidado de tu regalon</p>
 				<div class="my-2" id="centrar">					
@@ -74,7 +74,7 @@
 										<!--/Card image-->																			
 									 
 										<div class="px-4">
-                                        <form method="POST" action="{{ url('/plan/contratarp') }}">
+                                        <form method="POST" action="{{ url('/plan/contratarg') }}">
                                             {!! csrf_field() !!}
                                             @if ( $estado == 'contratar' ) 
                                                 <input name="usuario" class="form-control" type="hidden" value="{{ Auth::user()->id }}">
@@ -82,9 +82,8 @@
                                                 <input name="total" id="total" class="form-control" type="hidden" value="">
                                             @else
                                                 <input name="total" id="total" class="form-control" type="hidden" value="">
-                                            @endif   
-                                            
-                                            
+                                            @endif 
+
 
                                             <div class="table-wrapper table-responsive table-wrapper-scroll-y my-custom-scrollbar scrollbar scrollbar-primary my-2">
 
@@ -139,19 +138,19 @@
                                                                     <td class="sub-title3">{{ $variante->servicio}} {{ $variante->nom_variante }}</td>
                                                                     <td>														
                                                                         <div id="centrar">
-                                                                            @if ( $variante->aplicacion == '1' ) 
+                                                                            @if ( $variante->aplicacion == '1' )                                     
                                                                                 <div class="switch ">
-                                                                                    <label>		     
-                                                                                        @if ( $variante->id_variante == '1' )
-                                                                                            <input type="checkbox" class="plan-control" checked name="elemento{{ $variante->id_servicio}}_{{ $variante->id_variante}}" id="elemento{{ $variante->id_servicio}}_{{ $variante->id_variante}}">
-                                                                                            <span class="lever"></span>
-                                                                                        @elseif ($variante->id_variante == '2')
-                                                                                            <input type="checkbox" class="plan-control" checked name="elemento{{ $variante->id_servicio}}_{{ $variante->id_variante}}" id="elemento{{ $variante->id_servicio}}_{{ $variante->id_variante}}">
-                                                                                            <span class="lever"></span>
-                                                                                        @else   
-                                                                                            <input type="checkbox" class="plan-control" name="elemento{{ $variante->id_servicio}}_{{ $variante->id_variante}}" id="elemento{{ $variante->id_servicio}}_{{ $variante->id_variante}}">
-                                                                                            <span class="lever"></span>
-                                                                                        @endif                                                                                        
+                                                                                    <label>																	  
+                                                                                    @if ( $variante->id_variante == '4' )
+                                                                                        <input type="checkbox" class="plan-control" checked name="elemento{{ $variante->id_servicio}}_{{ $variante->id_variante}}" id="elemento{{ $variante->id_servicio}}_{{ $variante->id_variante}}">
+                                                                                        <span class="lever"></span>
+                                                                                    @elseif ($variante->id_variante == '5')
+                                                                                        <input type="checkbox" class="plan-control" checked name="elemento{{ $variante->id_servicio}}_{{ $variante->id_variante}}" id="elemento{{ $variante->id_servicio}}_{{ $variante->id_variante}}">
+                                                                                        <span class="lever"></span>
+                                                                                    @else   
+                                                                                        <input type="checkbox" class="plan-control" name="elemento{{ $variante->id_servicio}}_{{ $variante->id_variante}}" id="elemento{{ $variante->id_servicio}}_{{ $variante->id_variante}}">
+                                                                                        <span class="lever"></span>
+                                                                                    @endif 
                                                                                     </label>
                                                                                 </div>
                                                                             @elseif ( $variante->aplicacion == '2' )
@@ -174,13 +173,11 @@
                                                 
                                             </div>
 
-                                            <div id="centrar" class="my-3">                                                
-                                                
+                                            <div id="centrar" class="my-3">
                                                 <div class="row" style="width: 75%;">
                                                     <div class="col-lg-6 col-md-12 col-12 my-2">
                                                         <input name="totalmes" id="totalmes" class="form-control text-center" disabled type="text" value="" >
                                                     </div> 
-
                                                     @if ( $estado == 'contratar' ) 
                                                         <div class="col-lg-6 col-md-12 col-12" id="centrar">
                                                             <button type="submit" class="btn  btn-rounded purple-gradient btn my-0 popoverInfo" id="btn-contratar">Contratar <i class="fa fa-plus ml-2"></i></button>                                                    
@@ -189,9 +186,8 @@
                                                         <div class="col-lg-6 col-md-12 col-12" id="centrar">                                                            
                                                             <a class="btn  btn-rounded purple-gradient btn my-0" href="{{ url('/login') }}">Contratar <i class="fa fa-plus ml-2"></i></a>
                                                         </div>
-                                                    @endif  
-                                                                                                  	
-                                                </div>                                        									                                            
+                                                    @endif                                                                                                   	
+                                                </div>                                             									                                            
                                             </div>
 
                                         </form>

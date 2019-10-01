@@ -42,4 +42,9 @@ class Mascota extends Model
         return $this->belongsTo(Raza::class);
     }
 
+    public function plan()
+    {
+        return $this->hasMany(Plan::class);
+    }
+
 }

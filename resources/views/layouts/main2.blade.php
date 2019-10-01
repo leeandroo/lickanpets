@@ -77,31 +77,30 @@
 	<script>
 		$('#message').modal('show')
 	</script>
-	
-	<script>
+
+    <script>
 		function calcularTotal(){
 
 			var inputtotal = document.getElementById("total");
 			var inputtotalmes = document.getElementById("totalmes");
 
-			// Obtener los valores seleccionados
+			// Obtener los valores seleccionados  
+			                                   
+			var elemento1_4 = $('#elemento1_4').is(':checked') ? 12750 : 0;
+			var elemento1_5 = $('#elemento1_5').is(':checked') ? 12750 : 0;
 			var elemento1_1 = 0; elemento1_1 = $('#elemento1_1').is(':checked') ? 15300 : 0;
 			var elemento1_2 = 0; elemento1_2 = $('#elemento1_2').is(':checked') ? 12750 : 0;
-			var elemento1_3 = 0; elemento1_3 = $('#elemento1_3').is(':checked') ? 12750 : 0;
-			var elemento1_4 = 0; elemento1_4 = $('#elemento1_4').is(':checked') ? 12750 : 0;
-			var elemento1_5 = 0; elemento1_5 = $('#elemento1_5').is(':checked') ? 12750 : 0;
-			
+			var elemento1_3 = 0; elemento1_3 = $('#elemento1_3').is(':checked') ? 12750 : 0; 
+
 			var elemento2_6 = 0;     
 			elemento2_6 = $('#elemento2_6').val() * 11900;
+
 			var elemento2_7 = 0;     
-			elemento2_7 = $('#elemento2_7').val() * 21250;
-
-			var elemento3_8 = 0; elemento3_8 = $('#elemento3_8').is(':checked') ? 2550 : 0;			
-			var elemento3_9 = 0; elemento3_9 = $('#elemento3_9').is(':checked') ? 3400 : 0;
-			var elemento3_10 = 0; elemento3_10 = $('#elemento3_10').is(':checked') ? 5950 : 0;
-			var elemento4_11 = 0; elemento4_11 = $('#elemento4_11').is(':checked') ? 12750 : 0;
-
-
+			elemento2_7 = $('#elemento2_7').val() * 21250;			
+			
+			var elemento3_9 = $('#elemento3_9').is(':checked') ? 3400 : 0;
+			var elemento3_10 = $('#elemento3_10').is(':checked') ? 5950 : 0;
+			var elemento4_11 = $('#elemento4_11').is(':checked') ? 12750 : 0;
 			var elemento5_12 = 0;     
 			elemento5_12 = $('#elemento5_12').val() * 5100;
 			var elemento5_13 = 0;     
@@ -114,40 +113,13 @@
 			elemento6_16 = $('#elemento6_16').val() * 8500;
 			var elemento6_17 = 0;     
 			elemento6_17 = $('#elemento6_17').val() * 21250;
+			var elemento6_18 = $('#elemento6_18').is(':checked') ? 21250 : 0;
 
-			var elemento6_18 = 0; elemento6_18 = $('#elemento6_18').is(':checked') ? 21250 : 0;			
-			var elemento7_19 = 0; elemento7_19 = $('#elemento7_19').is(':checked') ? 2500 : 0;
-			var elemento7_20 = 0; elemento7_20 = $('#elemento7_20').is(':checked') ? 46750 : 0;
-			var elemento7_21 = 0; elemento7_21 = $('#elemento7_21').is(':checked') ? 55250 : 0;
-			var elemento7_22 = 0; elemento7_22 = $('#elemento7_22').is(':checked') ? 63750 : 0;
-			var elemento7_23 = 0; elemento7_23 = $('#elemento7_23').is(':checked') ? 34000 : 0;
-			var elemento8_24 = 0; elemento8_24 = $('#elemento8_24').is(':checked') ? 38250 : 0;
-			var elemento8_25 = 0; elemento8_25 = $('#elemento8_25').is(':checked') ? 38250 : 0;
-			var elemento8_26 = 0; elemento8_26 = $('#elemento8_26').is(':checked') ? 46750 : 0;
-			var elemento8_27 = 0; elemento8_27 = $('#elemento8_27').is(':checked') ? 46750 : 0;
-			var elemento8_28 = 0; elemento8_28 = $('#elemento8_28').is(':checked') ? 29750 : 0;
+			var elemento7_23 = $('#elemento7_23').is(':checked') ? 34000 : 0;
+
+			var elemento8_28 = $('#elemento8_28').is(':checked') ? 29750 : 0;
+
 			
-			
-			var elemento9_29 = 0;     
-			elemento9_29 = $('#elemento9_29').val() * 34000;
-			var elemento9_30 = 0;     
-			elemento9_30 = $('#elemento9_30').val() * 38250;
-			var elemento9_31 = 0;     
-			elemento9_31 = $('#elemento9_31').val() * 42500;
-			var elemento10_32 = 0;     
-			elemento10_32 = $('#elemento10_32').val() * 12750;
-			var elemento10_33 = 0;     
-			elemento10_33 = $('#elemento10_33').val() * 15300;
-			var elemento10_34 = 0;     
-			elemento10_34 = $('#elemento10_34').val() * 17850;
-			var elemento10_35 = 0;     
-			elemento10_35 = $('#elemento10_35').val() * 21250;
-			var elemento10_36 = 0;     
-			elemento10_36 = $('#elemento10_36').val() * 25500;
-			var elemento10_37 = 0;     
-			elemento10_37 = $('#elemento10_37').val() * 29750;
-			var elemento10_38 = 0;     
-			elemento10_38 = $('#elemento10_38').val()  * 38250;
 
 			// Calcular valor
 			var total = 
@@ -158,7 +130,6 @@
 			parseInt(elemento1_5) + 
 			parseInt(elemento2_6) + 
 			parseInt(elemento2_7) + 
-			parseInt(elemento3_8) + 
 			parseInt(elemento3_9) + 
 			parseInt(elemento3_10) + 
 			parseInt(elemento4_11) + 
@@ -169,27 +140,8 @@
 			parseInt(elemento6_16) + 
 			parseInt(elemento6_17) + 
 			parseInt(elemento6_18) + 
-			parseInt(elemento7_19) + 
-			parseInt(elemento7_20) + 
-			parseInt(elemento7_21) + 
-			parseInt(elemento7_22) + 
 			parseInt(elemento7_23) + 
-			parseInt(elemento8_24) + 
-			parseInt(elemento8_25) + 
-			parseInt(elemento8_26) + 
-			parseInt(elemento8_27) + 
-			parseInt(elemento8_28) + 
-			parseInt(elemento9_29) + 
-			parseInt(elemento9_30) + 
-			parseInt(elemento9_31) + 
-			parseInt(elemento10_32) + 
-			parseInt(elemento10_33) + 
-			parseInt(elemento10_34) + 
-			parseInt(elemento10_35) + 
-			parseInt(elemento10_36) + 
-			parseInt(elemento10_37) + 
-			parseInt(elemento10_38);
-			
+			parseInt(elemento8_28);
 
 			inputtotal.value = total;
 			inputtotalmes.value = "Total: "+total+ " CLP. Anual";
@@ -197,11 +149,7 @@
 			totalMes = parseInt(total/12);
 
 			$('#totalMes').html((totalMes));
-
-	
-			
 		}    
-	
 
 
 		// A $( document ).ready() block.
@@ -214,6 +162,7 @@
 		});
 
 	</script>
+
 
 </body>
 </html>

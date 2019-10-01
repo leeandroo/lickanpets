@@ -236,7 +236,7 @@
                 
                 <div class="row">
                   <a class="btn purple-gradient btn-rounded" href="{{ url('/login') }}">Comprar</a>
-                  <a class="btn purple-gradient btn-rounded" href="{{ url('/cotizar') }}">Cotizar</a>
+                  <a class="btn purple-gradient btn-rounded" href="{{ url('/cotizarPlan') }}">Cotizar</a>
                 {{-- <button type="button" class="btn btn-secondary btn-rounded">Comprar</button>
                 <button type="button" class="btn btn-secondary btn-rounded">Cotizar</button> --}}
                 </div>

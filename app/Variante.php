@@ -35,4 +35,9 @@ class Variante extends Model
     {
         return $this->hasMany(EspecieVariante::class);
     }
+
+    public function plan_variante()
+    {
+        return $this->hasMany(PlanVariante::class);
+    }
 }

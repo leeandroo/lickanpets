@@ -11,6 +11,8 @@ class User extends Authenticatable
     protected $table = "user";
     public $timestamps = false;
 
+
+
     /**
      * The attributes that are mass assignable.
      *
@@ -24,6 +26,13 @@ class User extends Authenticatable
         'rut',
         'type'
     ];
+    
+    // Relationships
+
+    public function plan()
+    {
+        return $this->hasMany(Plan::class);
+    }
 
     /**
      * The attributes that should be hidden for arrays.
